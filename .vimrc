@@ -106,6 +106,8 @@ endif
 "括弧の対応表示時間
 set showmatch matchtime=1
 "タブを設定
+autocmd BufRead,BufNewFile *.erb setlocal sw=2 sts=2 ts=2 et
+autocmd BufRead,BufNewFile *.rb setlocal sw=2 sts=2 ts=2 et
 "set ts=4 sw=4 sts=4
 "自動的にインデントする
 set autoindent
@@ -123,6 +125,18 @@ set display=lastline
 "Tab、行末の半角スペースを明示的に表示する
 set list
 set listchars=tab:^\ ,trail:~
+"fold
+"set foldmethod=syntax
+"set foldlevelstart=1
+"
+"let javaScript_fold=1         " JavaScript
+"let perl_fold=1               " Perl
+"let php_folding=1             " PHP
+"let r_syntax_folding=1        " R
+"let ruby_fold=1               " Ruby
+"let sh_fold_enabled=1         " sh
+"let vimsyn_folding='af'       " Vim script
+"let xml_syntax_folding=1      " XML
 
 " ハイライトを有効にする
 if &t_Co > 2 || has('gui_running')
@@ -449,3 +463,4 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
