@@ -5,6 +5,7 @@ set nocompatible
 scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8
+command! E Explore
 
 "----------------------------------------
 " ユーザーランタイムパス設定
@@ -324,6 +325,8 @@ endif
 " 各種プラグイン設定
 "----------------------------------------
 
+set tabstop=2 autoindent expandtab shiftwidth=2
+
 " JavaScript基本フォーマット
 autocmd filetype javascript :set tabstop=2 shiftwidth=2
 autocmd BufNewFile *.js :set ft=javascript fenc=utf-8 sw=2 ts=2 expandtab
@@ -338,6 +341,7 @@ autocmd filetype php :set tabstop=4 shiftwidth=4
 autocmd filetype php :set makeprg=php\ -l\ %
 autocmd filetype php :set errorformat=php%m\ in\ %f\ on\ line\ %l
 
+autocmd filetype python :set tabstop=4 autoindent expandtab shiftwidth=4
 "let php_folding=1
 
 " source ~/.vim/php-doc.vim
@@ -366,6 +370,14 @@ let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'scrooloose/syntastic'
+
+" ----------------------------------------------------------------------
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'active' }
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " vimrc に記述されたプラグインでインストールされていないものがないかチェックする
 NeoBundleCheck
