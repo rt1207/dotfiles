@@ -372,7 +372,7 @@ NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 
 " ----------------------------------------------------------------------
 " syntastic
